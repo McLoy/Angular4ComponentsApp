@@ -28,7 +28,9 @@ import { Component } from '@angular/core';
   '<p>' +
   '<button [disabled]="buttonStatus">My button</button>' +
   '<p>' +
-  '<button [disabled]="buttonStatus1 != buttonStatus1Value">My 2 button</button>',
+  '<button [disabled]="buttonStatus1 != buttonStatus1Value">My 2 button</button>' +
+  '<p>' +
+  '<button (mouseenter)="myEvent($event)">My button with event</button>',
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
@@ -51,4 +53,8 @@ export class AppComponent {
 
   buttonStatus1 = 'enabled';
   buttonStatus1Value = 'enabled';
+
+  myEvent(event){
+    console.log(event);
+  }
 }
